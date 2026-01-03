@@ -1,0 +1,233 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[3]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill & #2 \\[3.75pt]
+    \end{tabularx}
+    \textit{#3} \\[4pt]
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+
+% project listing enviroments
+\newenvironment{projectlong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx} \\
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Milton Torres Mego} \\[7.5pt]
+\href{https://github.com/torme21}{\raisebox{-0.05\height}\faGithub\ Torme21} \textbar\ 
+\href{https://www.linkedin.com/in/milton-torres-mego/}{\raisebox{-0.05\height}\faLinkedin\ Milton Torres} \textbar\ 
+\href{mailto:miltonmego5@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ miltonmego5@gmail.com} \textbar\ 
+\href{tel:+51938111847}{\raisebox{-0.05\height}\faMobile \ 938111847}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Resumen}
+Analista de Datos y Automatización con experiencia en el diseño de soluciones orientadas a la optimización de procesos críticos, 
+reducción de carga manual y mejora de la toma de decisiones a nivel gerencial. Especializado en Python, RPA, SQL y BI, con foco en convertir operaciones manuales en sistemas escalables y confiables. He liderado automatizaciones que eliminaron tareas repetitivas, redujeron errores humanos y liberaron más de 1,000 horas anuales de trabajo operativo. Perfil orientado a impacto medible, eficiencia y alineación entre datos y negocio.
+
+%Experience
+\section{Experiencia Laboral}
+
+\begin{joblong}{Analista Jr. de Inteligencia Comercial}{Dic 2025 - Presente}{Interseguro Compañía de Seguros}
+    \item Automatización de procesos DIS y flujos operativos mediante Python y SQL.
+    \item Estandarización y versionamiento de scripts analíticos mediante Git, migrando procesos manuales y scripts aislados a un repositorio estructurado.
+    \item Diseño de estructura modular (utils, pipelines) para reutilización y mantenimiento de procesos.
+    \item Integración con BigQuery (GCP) para consultas y control de datos.
+\end{joblong}
+
+\begin{joblong}{Asistente de Inteligencia Comercial}{Mar 2024 - Oct 2025}{Interseguro Compañía de Seguros}
+    \item Implementación de automatizaciones mediante RPA y Python para la ejecución de tareas repetitivas, reduciendo la carga manual del área.
+    \item Desarrollo de dashboards de seguimiento utilizados por jefaturas y gerencias para la toma de decisiones sobre asignación de carga operativa y control de desempeño.
+    \item Generación de reportes periódicos a partir de fuentes de datos estructuradas, utilizados como insumo para la toma de decisiones.
+    \item Automatización de procesos de limpieza y transformación de grandes volúmenes de datos, reduciendo errores por manipulación manual.
+    \item Trabajo transversal con distintas áreas para mejorar flujos de información mediante soluciones basadas en datos.
+\end{joblong}
+
+\begin{joblong}{Practicante de People Analytics}{Abr 2023 - Mar 2024}{Interseguro Compañía de Seguros}
+    \item Diseño de estructuras de datos para el análisis de información de People Analytics y compensaciones.
+    \item Desarrollo de dashboards e indicadores clave (KPIs) utilizados por jefaturas y comité para el análisis de evolución salarial.
+    \item Eliminación de análisis manual persona por persona mediante la consolidación y visualización automatizada de datos históricos.
+    \item Implementación de automatizaciones que redujeron tiempos de análisis y mejoraron la consistencia de la información.
+\end{joblong}
+
+%Projects
+\section{Proyectos}
+\begin{projectlong}{Automatización de Búsqueda Web - Detección de Fallecidos }{2025}
+    \item Detecté una oportunidad de mejora en la identificación de potenciales casos de fallecimiento, un proceso crítico con alto componente manual y bajo nivel de cobertura.
+    \item Diseñé y desarrollé un bot en Python que integra Selenium y BeautifulSoup para web scraping, pandas para limpieza y normalización de datos, y BigQuery para cruces dinámicos de información.
+    \item Implementé una interfaz gráfica en Tkinter para facilitar el uso operativo del bot por parte del equipo.
+    \item La solución redujo significativamente el tiempo de ejecución, eliminó carga manual recurrente y mejoró la detección de casos, contribuyendo directamente a mejores resultados comerciales del área.
+\end{projectlong}
+
+\begin{projectlong}{Automatización de Proceso - DIS}{2024}
+    \item Automaticé tareas clave del proceso de Invalidez y Sobrevivencia, previamente ejecutadas de forma manual y propensas a errores.
+    \item Implementé bots RPA que estandarizaron la asignación de datos y el procesamiento de solicitudes.
+    \item La automatización mejoró la consistencia de la información, redujo errores humanos y permitió una mayor rapidez y precisión en el servicio.
+\end{projectlong}
+
+\begin{projectlong}{Dashboards de Seguimiento Operativo - DIS}{2024}
+    \item Desarrollé dashboards interactivos para las áreas de Invalidez y Sobrevivencia y Rentas de Jubilación.
+    \item Las visualizaciones permitieron monitorear desempeño de agentes, identificar cuellos de botella y priorizar acciones de mejora.
+    \item Los dashboards se convirtieron en una herramienta recurrente de gestión para la toma de decisiones operativas.
+\end{projectlong}
+
+\begin{projectlong}{Automatización de llenado web - T-Registro SUNAT}{2023}
+    \item Automaticé el proceso de carga de información de nuevos colaboradores en la plataforma SUNAT.
+    \item Eliminé pasos manuales, reduciendo tiempos de carga y mejorando la precisión de los datos enviados a la entidad reguladora.
+    \item La solución aumentó la confiabilidad del proceso y redujo reprocesos administrativos.
+\end{projectlong}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Educación}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+    2019 - 2025 & Ingeniería Industrial - \textbf{Universidad Nacional de Ingeniería} \\
+    2025 & Programa Datachampions - \textbf{Interseguro Compañía de Seguros} \\
+    2025 & Portugués Intermedio - \textbf{CEPS - Universidad Nacional de Ingeniería} \\
+    2025 & PDE Machine Learning con Python - \textbf{Universidad Nacional de Ingeniería} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Habilidades}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{Lenguajes} & Python, SQL \\[3pt]
+    \textbf{Data \& BI} & Power BI, Looker Studio, Excel \\[3pt]
+    \textbf{Automatización} & RPA, Selenium \\[3pt]
+    \textbf{Bases de Datos} & BigQuery \\[3pt]
+    \textbf{Control de Versiones} & Git \\[3pt]
+    \textbf{Habilidades Blandas} & Pensamiento analítico, resolución de problemas, trabajo colaborativo, orientación a resultados \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	Languajes
+%----------------------------------------------------------------------------------------
+
+\section{Lenguajes}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{Portugués} & Intermedio \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{Ingles} & Basico \\
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
