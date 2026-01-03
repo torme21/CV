@@ -1,5 +1,7 @@
 # 📄 CV Profesional – Milton Torres Mego
 
+
+
 Este repositorio contiene mi **Currículum Vitae profesional**, desarrollado en **LaTeX** y versionado con **Git/GitHub**.
 
 Más que un CV, este repositorio refleja **cómo trabajo**: automatización, orden, trazabilidad y mejora continua.
@@ -29,6 +31,13 @@ Analista de **Datos y Automatización** con experiencia en:
 * Reducción de carga manual y errores en procesos críticos
 
 Mi enfoque está orientado a **eficiencia operativa, impacto medible y alineación entre datos y negocio**.
+
+---
+📄 CV publicado
+
+El CV se encuentra disponible públicamente y siempre actualizado en el siguiente enlace:
+
+👉 https://torme21.github.io/cv/milton_torres_cv.pdf
 
 ---
 
